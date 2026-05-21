@@ -5,10 +5,11 @@ StringCalculator.prototype.add = function(string_numbers) {
         return 0;
     }
 
-    if (string_numbers.indexOf(',') !== -1) {
-        const parts = string_numbers.split(',');
-        return parseInt(parts[0]) + parseInt(parts[1]);
-    }
+    const parts = string_numbers.split(',');
+    let sum = 0;
 
-    return parseInt(string_numbers);
+    for(let i = 0; i < parts.length; i++) {
+        sum += parseInt(parts[i]);
+    }
+    return sum;
 };
